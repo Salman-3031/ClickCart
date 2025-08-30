@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Ubantu;
+  src: url('./assets/fonts/Ubuntu-Medium.ttf') format("truetype");
+  font-display: swap;
+}
