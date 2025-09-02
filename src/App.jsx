@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Navbar from "./components/Navbar";
 import axios from "axios";
+import Footer from "./components/Footer";
 
 const App = () => {
   // // const [location, setLocation] = useState()
@@ -50,6 +51,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 };

@@ -16,7 +16,8 @@ export default {
        },
        colors: {
         btnColor: '#e6193f',
-        paraColor: '#383838'
+        paraColor: '#383838',
+        btnRight: '#920092'
        }
     },
   },
