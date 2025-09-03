@@ -31,7 +31,8 @@ const Navbar = ({ location }) => {
           <div className="hidden md:flex items-center gap-1">
             <CiLocationOn className="text-btnColor text-xl" />
             <h4 className="text-paraColor font-medium">
-              {location ? <p>{location.town}</p> : "Add Address"}
+              {/* {location ? <p>{location.town}</p> : "Add Address"} */}
+              Address
             </h4>
           </div>
         </div>

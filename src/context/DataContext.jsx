@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
+import Category from "../components/Category";
 
 export const DataContext = createContext(null)
 
@@ -16,7 +17,18 @@ export const DataProvider = ({children})=>{
         console.log(error)
     }
    }
-    return <DataContext.Provider value={{data,setData,fetchingData}}>
+
+//    fetchingData by Category 
+  const getUniqueCategory = (data, property) => {
+    let newVal = data?.map((currElem) => currElem[property])
+    newVal = ['All',...new Set(newVal)]
+    return newVal
+  }
+
+  const categoryOnlyData = getUniqueCategory(data, 'category')
+  const brandOnlyData = getUniqueCategory(data,'brand')
+
+    return <DataContext.Provider value={{data,setData,fetchingData, categoryOnlyData,brandOnlyData}}>
         {children}
     </DataContext.Provider>
 }
