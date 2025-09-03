@@ -5,7 +5,7 @@ const FilterSection = ({search, setSearch, category, setCategory, brand, setBran
     const { categoryOnlyData, brandOnlyData } = getData()
     // console.log(categoryOnlyData)
     return (
-        <div className='p-5 shadow shadow-[#0000005d] bg-gray-100 h-max max-w-[250px]  min-w-[150px] w-full'>
+        <div className='p-5 shadow shadow-[#0000005d] bg-gray-100 h-max max-w-[250px]  min-w-[150px] w-full md:min-w-[250px]'>
             <input 
             className='px-3 py-1 text-black outline-[1px] focus:outline-gray-400 border border-gray-400 rounded-sm w-full' 
             type="text" 
