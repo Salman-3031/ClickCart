@@ -1,12 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: Ubantu;
-  src: url('./assets/fonts/Ubuntu-Medium.ttf') format("truetype");
-  font-display: swap;
-}
+
 /* custom clerk avatar class  */
 /* .cl-avatarBox{
   width: 2.5rem;
