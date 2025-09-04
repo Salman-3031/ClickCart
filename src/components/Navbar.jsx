@@ -4,6 +4,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { GiShoppingCart } from "react-icons/gi";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { getCart } from "../context/CartContext";
 
 const navLinks = [
   { id: 1, link: "/", linkName: "Home" },
@@ -14,6 +15,7 @@ const navLinks = [
 
 const Navbar = ({ location }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const {cartItems} = getCart()
 
   return (
     <header className="bg-white py-3 shadow-2xl relative z-50">
@@ -59,7 +61,7 @@ const Navbar = ({ location }) => {
           <Link to={"cart"} className="relative">
             <GiShoppingCart className="text-xl" />
             <span className="absolute flex justify-center items-center -top-[5px] -right-[8px] bg-btnColor rounded-full h-4 w-4 text-white font-semibold text-[10px]">
-              10
+              {cartItems.length}
             </span>
           </Link>
           <div>
@@ -107,16 +109,16 @@ const Navbar = ({ location }) => {
               onClick={() => setIsOpen(false)}
             >
               <GiShoppingCart className="text-xl" />
-              <span className="text-sm">Cart (10)</span>
+              <span className="text-sm">Cart ({cartItems.length})</span>
             </Link>
-            {/* <div>
+            <div>
               <SignedOut>
                 <SignInButton className="bg-btnColor px-3 py-1 rounded-sm text-white cursor-pointer shadow shadow-[#00000078]" />
               </SignedOut>
               <SignedIn>
                 <UserButton />
               </SignedIn>
-            </div> */}
+            </div>
           </ul>
         </div>
       )}

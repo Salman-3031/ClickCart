@@ -1,9 +1,11 @@
 import React from 'react'
 import { GiShoppingCart } from "react-icons/gi";
 import { useNavigate} from 'react-router-dom'
+import { getCart } from '../context/CartContext';
 
 const ProductCard = ({product}) => {
   const navigate = useNavigate()
+  const {addToCart} = getCart()
 
   const goToSingleProduct = (id) =>{
     navigate(`/product/${id}`)
@@ -18,7 +20,7 @@ const ProductCard = ({product}) => {
         <div className="info space-y-1">
             <h4 className='line-clamp-2'>{product.title}</h4>
             <h5 className='font-semibold'>${product.price}</h5>
-            <button className='bg-btnColor text-white flex gap-1 items-center px-2 py-1 w-full justify-center rounded-sm'><GiShoppingCart/> Add to Cart</button>
+            <button onClick={()=>addToCart(product)} className='bg-btnColor text-white flex gap-1 items-center px-2 py-1 w-full justify-center rounded-sm'><GiShoppingCart/> Add to Cart</button>
         </div>
     </div>
   )

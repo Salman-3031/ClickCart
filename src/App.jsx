@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import axios from "axios";
 import Footer from "./components/Footer";
 import SingleProduct from "./components/SingleProduct";
+import Cart from "./pages/Cart";
 
 const App = () => {
   // // const [location, setLocation] = useState()
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer/>
     </BrowserRouter>
