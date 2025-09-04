@@ -109,14 +109,14 @@ const Navbar = ({ location }) => {
               <GiShoppingCart className="text-xl" />
               <span className="text-sm">Cart (10)</span>
             </Link>
-            <div>
+            {/* <div>
               <SignedOut>
                 <SignInButton className="bg-btnColor px-3 py-1 rounded-sm text-white cursor-pointer shadow shadow-[#00000078]" />
               </SignedOut>
               <SignedIn>
                 <UserButton />
               </SignedIn>
-            </div>
+            </div> */}
           </ul>
         </div>
       )}

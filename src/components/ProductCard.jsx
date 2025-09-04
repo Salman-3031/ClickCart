@@ -1,11 +1,18 @@
 import React from 'react'
 import { GiShoppingCart } from "react-icons/gi";
+import { useNavigate} from 'react-router-dom'
 
 const ProductCard = ({product}) => {
+  const navigate = useNavigate()
+
+  const goToSingleProduct = (id) =>{
+    navigate(`/product/${id}`)
+  }
+  
     // console.log(product)
   return (
-    <div className='px-3 py-3 h-max shadow shadow-[#0000005d] hover:scale-[1.02] transition-all duration-300 space-y-2'>
-        <div className="img h-52 w-full bg-gray-100">
+    <div className='px-3 py-3 h-max shadow shadow-[#0000005d] hover:scale-[1.02] transition-all duration-300 space-y-2' >
+        <div className="img h-52 w-full bg-gray-100" onClick={()=>goToSingleProduct(product.id)}>
             <img className='h-full w-full object-cover' src={product.image} alt={product.title} />
         </div>
         <div className="info space-y-1">

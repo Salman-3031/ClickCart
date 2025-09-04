@@ -17,6 +17,7 @@ const Products = () => {
   // console.log(data)
   useEffect(() => {
     fetchingData()
+    // window.scrollTo(0,0) //one way is this
   }, [])
 
   const filterData = data?.filter((product) => {

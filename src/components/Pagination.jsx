@@ -2,7 +2,7 @@ import React from 'react'
 
 const getPages = (current, total) => {
     const pages = []
-    console.log(pages)
+    // console.log(pages)
     if (total <= 5) {
         for (let i = 1; i <= total; i++) {
             pages.push(i)
