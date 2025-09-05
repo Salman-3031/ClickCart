@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import loading from '../assets/Loading4.webm'
 import NavigationPath from './NavigationPath'
 import { GiShoppingCart } from "react-icons/gi";
+import { getCart } from '../context/CartContext'
 
 
 
@@ -11,6 +12,7 @@ import { GiShoppingCart } from "react-icons/gi";
 const SingleProduct = () => {
     const [singleProduct, setSingleProduct] = useState()
     const params = useParams()
+    const {addToCart} = getCart()
     // console.log(params)
 
     const getSingelProduct = async () => {
@@ -54,7 +56,7 @@ const SingleProduct = () => {
                                     <label htmlFor="quantity">Quantity: </label>
                                     <input type="number" min={1} className='shadow shadow-[#0000005e] rounded-sm px-2 py-1 w-20' placeholder='1' />
                                 </div>
-                                <button className='bg-btnColor w-max text-white flex gap-1 items-center px-2 py-1 w-full justify-center rounded-sm'><GiShoppingCart/> Add to Cart</button>
+                                <button onClick={()=>addToCart(singleProduct)} className='bg-btnColor w-max text-white flex gap-1 items-center px-2 py-1 justify-center rounded-sm'><GiShoppingCart/> Add to Cart</button>
                             </div>
                         </div>
                     </div>

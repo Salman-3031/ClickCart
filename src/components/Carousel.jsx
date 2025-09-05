@@ -5,8 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Category from "./Category";
+import { useNavigate } from "react-router-dom";
 
 const Carousel = () => {
+  const navigate = useNavigate()
   const { fetchingData, data } = useContext(DataContext);
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const Carousel = () => {
                   <p className="text-gray-300 line-clamp-4">
                     {product.description}
                   </p>
-                  <button className="bg-gradient-to-r from-btnColor to-btnRight px-3 py-1 rounded-sm ">Shop Now</button>
+                  <button onClick={()=>navigate('/product')} className="bg-gradient-to-r from-btnColor to-btnRight px-3 py-1 rounded-sm ">Shop Now</button>
                 </div>
 
                 {/* Right column (Image) */}

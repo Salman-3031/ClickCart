@@ -9,6 +9,8 @@ import axios from "axios";
 import Footer from "./components/Footer";
 import SingleProduct from "./components/SingleProduct";
 import Cart from "./pages/Cart";
+import { ToastContainer } from "react-toastify";
+import CategoryProduct from "./pages/CategoryProduct";
 
 const App = () => {
   // // const [location, setLocation] = useState()
@@ -46,10 +48,12 @@ const App = () => {
 
   return (
     <BrowserRouter>
+     <ToastContainer />
       <Navbar location={location}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Products />} />
+        <Route path="/product/category/:category" element={<CategoryProduct />} />
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

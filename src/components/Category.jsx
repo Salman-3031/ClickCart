@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react'
 import { getData } from '../context/DataContext'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const Category = () => {
   const { categoryOnlyData } = getData()
+  // console.log(categoryOnlyData)
+  const navigate = useNavigate()
 
   return (
     <div className="category-container py-4">
@@ -14,9 +17,10 @@ const Category = () => {
           animate={{ x: ['0%', '-120%'] }}
           transition={{ repeat: Infinity, duration: 25, ease: 'linear' }}
         >
-          {[...categoryOnlyData, ...categoryOnlyData,...categoryOnlyData].map((item, index) => (
+          {[...categoryOnlyData, ...categoryOnlyData,...categoryOnlyData].map((item,index) => (
             <button
               key={index}
+              onClick={()=> navigate(`/product/category/${item}`)}
               className="uppercase px-5 py-2 bg-gradient-to-r from-btnColor to-btnRight text-white rounded-md shadow hover:opacity-90 transition"
             >
               {item}
